@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mes projets</title>
+		<meta name="viewport" content="initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="fr" />
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+	</head>
+	
+	<body class="container-fluid">
+	
+		<div class="page-header">
+			<h1 class="text-center"> Mes projets </h1>
+		</div>
+		
+		<div class="text-center hidden-xs intro">
+				<h4> Vous trouverez ici la liste de mes projets réalisés à l'IUT</h4>
+		</div>
+		
+		
+		<div class="container">
+			<section class="row" id="grille">
+				<div id="portfolio" class="col-lg-3 col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 case">
+					<h4 class="text-center"><em>E-portfolio</em> </h4>
+					<a href="dl/eportfolio.rar" class="thumbnail">
+						<img src ="http://www.hapshack.com/images/O1uGa.png" alt="...">
+					</a>
+					<p>site web HTML/CSS</p>
+				</div>
+				<div id="pvsz" class="col-lg-3 col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 case"onclick="monProjet();">
+					<h4 class="text-center"><em>Plants Vs. Zombies</em> </h4>
+					<a href="#" class="thumbnail">
+						<img src ="img/pvsz.png" alt="...">
+					</a>
+					<p>jeu JAVA objet</p>
+				</div>
+				<div id="bonhomme" class="col-lg-3 col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 case">
+					<h4 class="text-center"><em>Bonhomme le ninja</em> </h4>
+					<a href="dl/bonhomme.exe" class="thumbnail">
+						<img src ="img/gm.png" alt="...">
+					</a>
+					<p>jeu de plateforme Game Maker</p>
+				</div>
+				<div id="etudes" class="col-lg-3 col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 case">
+					<h4 class="text-center"><em>Poursuite Etudes</em> </h4>
+					<a href="dl/PoursuiteEtudes.rar" class="thumbnail">
+						<img src ="img/iut.png" alt="...">
+					</a>
+					<p> site web php/sql </p>
+					
+				</div>
+				<div id="fiction" class="col-lg-3 col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 case">
+					<h4 class="text-center"><em>Projet 6e616764</em> </h4>
+					<a href="http://playfic.com/games/milotic/projet-6e616764" class="thumbnail">
+						<img src ="img/fiction.png" alt="...">
+					</a>
+					<p>fiction interactive Inform7</p>
+				</div>
+				<div id="android" class="col-lg-3 col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 case">
+					<h4 class="text-center"><em>TP traitement d'images</em> </h4>
+					<a href="dl/TraitementImages.rar" class="thumbnail">
+						<img src ="img/icon.png" alt="...">
+					</a>
+					<p>projet java</p>
+				</div>
+				
+			</section>
+		</div>
+		
+		<section id="projet" class="container">
+			<div class="row">
+				<h3 class="col-md-12">Plants Vs.Zombies | <a href="#" onclick="grilleDisplay();">retour à l'accueil</a></h3>
+				<div class="col-md-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 ">
+					<h4>Présentation</h4>
+					<iframe width="100%" height="400px" src="presentation/index.html" ></iframe>
+					<p><a href="presentation/index.html"> Lien vers la présentation </a></p>
+				</div>
+				<div class="col-md-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+					<h4> Le Projet </h4>
+					<p> Plants Vs. Zombies est un jeu de tower defense développé par PoCap Games et sorti en 2009. Dans le cadre de notre projet de fin de 1ère année de DUT Informatique,
+					nous avons réalisé en binôme une version JAVA du jeu dans lequel le jardin est constitué de cases sur lesquelles il est possible de planter différentes plantes, le but étant
+					de survivre un certain nombre de tours aux attaques des zombies.</p>
+					<h4>Lien de téléchargement</h4>
+					<p> <a href="dl/pvsz.exe" >Plants VS. Zombies (.exe)</a> </p>
+				</div>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="container" id="ft">
+				<p class="text-center">Léa Motisi &copy | avril 2014 | réalisé avec Bootstrap et jQuery</p>
+			</div>
+		</footer>
+		
+	</body>
+	
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="function.js"></script>
+	
+	
+	<script>
+		
+		function grilleDisplay() {
+			$(".intro").css("display","none");
+			$(".case").css("display","none");
+			$("#ft").css("display","none");
+			$("#projet").css("display","none");
+			var _nb = $("#grille").children().length;
+			
+			var liste = new Array();
+			for(var i=0;i< _nb; i++) {
+				liste[i]=i+1;
+			}
+	
+			$(".intro").fadeIn(1000);
+			$("#ft").delay(_nb*500+500).fadeIn(1000);
+			
+			for(var i=1;i<=_nb+1;i++){
+				var rd = Math.floor(Math.random()*liste.length); 
+				$(".case:nth-child("+liste[rd]+")").delay(500*i).fadeTo(1000,1);
+				liste.splice(rd,1);
+			}
+		}
+		
+		function monProjet() {
+			$(".intro").css("display","none");
+			$("#grille .case").css("display","none");
+			$("#projet").slideDown(1000);
+		}
+		
+		grilleDisplay();
+		
+	</script>
+	
+	
+</html>
